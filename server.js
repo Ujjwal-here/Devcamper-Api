@@ -1,9 +1,17 @@
 const express=require("express")
 const dotenv=require("dotenv")
+const connectDb=require("./config/db")
+
 
 dotenv.config({path:"./config/config.env"})
 
+connectDb()
+
+const bootcamps=require("./routes/bootcamps")
+
 const app=express()
+
+app.use("/bootcamps",bootcamps)
 
 const PORT=process.env.PORT
 
