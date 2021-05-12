@@ -1,4 +1,5 @@
 const mongoose=require("mongoose")
+const colors=require("colors")
 
 
 const connectDb= async ()=>{
@@ -9,7 +10,7 @@ const connectDb= async ()=>{
         useUnifiedTopology:true
     })
 
-    console.log("MongoDB connected...")
+    console.log("MongoDB connected..." .blue.bold)
 }
 
 module.exports=connectDb
